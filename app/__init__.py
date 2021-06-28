@@ -21,10 +21,11 @@ def create_app():
     app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
     app.config['MAIL_PORT'] = 587
     app.config['MAIL_USE_TLS'] = True
-    app.config['MAIL_USERNAME'] = ''
-    app.config['MAIL_PASSWORD'] = ''
+    app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+    app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+    app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER')
 
-    app.config['ADMINS'] = ['']
+    app.config['ADMINS'] = [os.environ.get('MAIL_USERNAME')]
     db.init_app(app=app)
     migrate.init_app(app, db)
     mail.init_app(app)
@@ -36,6 +37,9 @@ def create_app():
 
     from app.investments.views import investments_blueprint
     app.register_blueprint(investments_blueprint, url_prefix="/investments")
+
+    from app.graphs.views import graphs_blueprint
+    app.register_blueprint(graphs_blueprint, url_prefix="/graphs")
 
     # from TheCryptoSense.accounts.routes import auth
     # app.register_blueprint(auth)

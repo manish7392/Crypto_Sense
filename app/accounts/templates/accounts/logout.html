@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+{% for mess in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hola!</strong> {{ mess }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+{% endfor %}
+<div style="margin-left: 50px">
+<p><a href="{{url_for('accounts.login')}} " role="button" style="color: white; border: 1px solid white; padding: 5px; text-align: center; background-color: #008ECC">LOGIN AGAIN</a></p>
+</div>
+
+{%endblock content%}

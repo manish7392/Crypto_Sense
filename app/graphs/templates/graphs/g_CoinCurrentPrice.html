@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+    legend{
+        color:white;
+    }
+    label{
+        color:white;
+    }
+</style>
+    <div class="container">
+    <br>
+    <div class="content-section">
+        <form action="" method="POST">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Enter Your Values</legend>
+                <div class="form-group">
+                    <label for="id">IDs:</label><br>
+                    <input class="form-control" placeholder="eg: bitcoin,acash" type="text" id="id" name="id"/><br><br>
+                </div>
+                 <div class="form-group">
+                    <label for="vs_currencies">Currencies:</label><br>
+                    <input class="form-control" placeholder="eg: inr,usd" type="text" id="vs_currencies" name="vs_currencies"/><br><br>
+                </div>
+                 <div class="form-group">
+                    <label for="include_last_update_date">include_last_update_date(true/false):</label><br>
+                    <input class="form-control" placeholder="eg: false" type="text" id="include_last_update_date" name="include_last_update_date"/><br><br>
+                </div>
+                 <div class="form-group">
+                    <label for="include_24_hour_change">include_24_hour_change(true/false):</label><br>
+                    <input class="form-control" placeholder="eg: false" type="text" id="include_24_hour_change" name="include_24_hour_change"/><br><br>
+                </div>
+                <div class="form-group">
+                    <label for="include_market_cap">include_market_cap(true/false):</label><br>
+                    <input class="form-control" placeholder="eg: false" type="text" id="include_market_cap" name="include_market_cap"/><br><br>
+                </div>
+                 <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Submit"/><br><br>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    </div>
+{% endblock content %}

@@ -4,9 +4,13 @@
 		<div class="CaptionStyle">
 			<center>
 			<p><font size=25px>WELCOME TO CRYPTOSENSE</font><br><i>The place to check your trading skills in Cyptocurrency</i></p><br>
-			<p><a href="{{ url_for('accounts.login') }}" class='linkcolour' ><font color="#FF5A5F" >LOGIN TO CONTINUE</font></a></p><br>
-			<p><i><marquee><a href='' class='linkcolour'>SEE THE LAST WEEK'S STANDINGS</a></marquee></i></p>
+			<p><a href="{{ url_for('accounts.login') }}" class='linkcolour' ><font color=#FFFFFF >LOGIN TO CONTINUE</font></a></p><br>
+			<p><i><marquee><a href="{{url_for('investments.standings')}}" class='linkcolour'>SEE THE LAST WEEK'S STANDINGS</a></marquee></i></p>
 		</center>
 		</div>
+	</div>
+	<div class="container">
+		<p style="color: #fff; font-size: 30px; text-align: center;">About</p>
+		<p style="color: #fff; font-size: 25px; text-align: center;">The Website has been made as a part of project "CryptoTrade" by Abhishek Bansal, Arastu, Manish Patel and Prasheel Kumar Tiwari of IIT Indore.</p>
 	</div>
 {% endblock content %}
